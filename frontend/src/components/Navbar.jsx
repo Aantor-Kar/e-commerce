@@ -48,8 +48,8 @@ const Navbar = () => {
                     {token &&
                         <div className='absolute dropdown-menu pt-4 right-0 transition-all duration-200 ease-out opacity-0 translate-y-2 scale-95 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:pointer-events-auto origin-top-right'>
                             <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-50 text-gray-700 rounded-md shadow-lg'>
-                                <p className='cursor-pointer hover:text-black hover:font-bold'>My Profile</p>
-                                <p className='cursor-pointer hover:text-black hover:font-bold'>Orders</p>
+                                <p onClick={() => navigate('/profile')} className='cursor-pointer hover:text-black hover:font-bold'>My Profile</p>
+                                <p onClick={() => navigate('/orders')} className='cursor-pointer hover:text-black hover:font-bold'>Orders</p>
                                 <p onClick={() => logout()} className='cursor-pointer hover:text-black hover:font-bold'>Logout</p>
                             </div>
                         </div>
