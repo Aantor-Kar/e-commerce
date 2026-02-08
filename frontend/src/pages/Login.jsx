@@ -6,7 +6,7 @@ import { Navigate } from 'react-router-dom'
 
 const Login = () => {
   const [currentState, setCurrentState] = useState('Login')
-  const {token, setToken, backendUrl} = useContext(ShopContext)
+  const {token, setToken, backendUrl, getUserCart} = useContext(ShopContext)
   const[name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -30,6 +30,7 @@ const Login = () => {
         if(response.data.success){
           setToken(response.data.token)
           localStorage.setItem('token', response.data.token)
+          getUserCart(response.data.token);
         }else{
           toast.error(response.data.message)
           setLoading(false)
