@@ -36,7 +36,7 @@ const List = ({token}) => {
 
   return (
     <>
-      <p className="mb-2 text-lg">All Products List</p>
+      <p className="mb-2 text-lg">Amazor Product Catalog</p>
       <div className="flex flex-col gap-2">
         {/* List Table Title */}
         <div className="hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 border border-gray-400 bg-gray-200 text-md">

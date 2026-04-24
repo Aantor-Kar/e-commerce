@@ -2,11 +2,11 @@ import React from 'react'
 
 const Title = ({text1, text2}) => {
   return (
-    <div className='inline-flex gap-2 items-center mb-3'>
-      <p className='text-gray-700 font-bold'>{text1}
-        <span className='text-gray-500'>{text2}</span>
+    <div className='mb-3 inline-flex items-center gap-3'>
+      <p className='font-semibold tracking-[0.26em] text-slate-100'>{text1}
+        <span className='text-cyan-300'>{text2}</span>
       </p>
-      <p className='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700'></p>
+      <p className='theme-divider h-[2px] w-8 rounded-full sm:w-12'></p>
     </div>
   )
 }

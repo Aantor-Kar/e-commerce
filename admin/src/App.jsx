@@ -10,11 +10,60 @@ import { ToastContainer } from 'react-toastify';
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL
 export const currency = '$'
+const ADMIN_TOKEN_STORAGE_KEY = 'adminToken'
+const LEGACY_SHARED_TOKEN_KEY = 'token'
+
+const parseTokenPayload = (token) => {
+  try {
+    if (!token) {
+      return null;
+    }
+    const base64 = token.split('.')[1];
+    if (!base64) {
+      return null;
+    }
+    const normalized = base64.replace(/-/g, '+').replace(/_/g, '/');
+    const json = decodeURIComponent(
+      atob(normalized)
+        .split('')
+        .map((char) => `%${char.charCodeAt(0).toString(16).padStart(2, '0')}`)
+        .join('')
+    );
+    return JSON.parse(json);
+  } catch {
+    return null;
+  }
+}
+
+const getStoredAdminToken = () => {
+  const storedAdminToken = localStorage.getItem(ADMIN_TOKEN_STORAGE_KEY);
+  if (storedAdminToken) {
+    return storedAdminToken;
+  }
+
+  const legacyToken = localStorage.getItem(LEGACY_SHARED_TOKEN_KEY);
+  const legacyPayload = parseTokenPayload(legacyToken);
+  if (typeof legacyPayload === 'string' || (legacyPayload && typeof legacyPayload === 'object' && !legacyPayload.id)) {
+    localStorage.setItem(ADMIN_TOKEN_STORAGE_KEY, legacyToken);
+    return legacyToken;
+  }
+
+  return '';
+}
 
 function App() {
-  const [token, setToken] = useState(localStorage.getItem('token')?localStorage.getItem('token'):'');
+  const [token, setToken] = useState(getStoredAdminToken());
   useEffect(()=>{
-    localStorage.setItem('token', token);
+    if (token) {
+      localStorage.setItem(ADMIN_TOKEN_STORAGE_KEY, token);
+    } else {
+      localStorage.removeItem(ADMIN_TOKEN_STORAGE_KEY);
+      const legacyToken = localStorage.getItem(LEGACY_SHARED_TOKEN_KEY);
+      const legacyPayload = parseTokenPayload(legacyToken);
+      if (typeof legacyPayload === 'string' || (legacyPayload && typeof legacyPayload === 'object' && !legacyPayload.id)) {
+        localStorage.removeItem(LEGACY_SHARED_TOKEN_KEY);
+      }
+    }
   },[token])
   return (
     <div className="bg-gray-50 min-h-screen">

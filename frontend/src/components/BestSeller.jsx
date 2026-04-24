@@ -14,10 +14,10 @@ const BestSeller = () => {
     },[products])
 
   return (
-    <div className='my-10'>
+    <div className='my-14'>
         <div className='text-center py-8 text-3xl'>
             <Title text1={'BEST'} text2={'SELLER'} />
-            <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
+            <p className='theme-copy m-auto w-3/4 text-xs sm:text-sm md:text-base'>
             These are the current trendy best selling products that we have. Customers find their designs very unique and appealing.</p>
         </div>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>

@@ -53,10 +53,6 @@ import p_img21 from './p_img21.png'
 // import p_img50 from './p_img50.png'
 // import p_img51 from './p_img51.png'
 // import p_img52 from './p_img52.png'
-
-
-import logo from './logo.png'
-import hero_img from './hero_img.png'
 import cart_icon from './cart_icon.png'
 import bin_icon from './bin_icon.png'
 import dropdown_icon from './dropdown_icon.png'
@@ -76,8 +72,6 @@ import cross_icon from './cross_icon.png'
 import empty_icon from './empty_icon.jpg'
 
 export const assets = {
-    logo,
-    hero_img,
     cart_icon,
     dropdown_icon,
     exchange_icon,
@@ -96,6 +90,8 @@ export const assets = {
     cross_icon,
     empty_icon
 }
+
+export const heroSpotlight = [p_img5, p_img14, p_img21]
 
 export const products = [
     {

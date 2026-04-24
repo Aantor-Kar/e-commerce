@@ -6,18 +6,18 @@ import NewsletterBox from '../components/NewsletterBox'
 const Contact = () => {
   return (
     <div>
-      <div className='text-center text-2xl pt-10 border-t'>
+      <div className='border-t border-slate-800/70 pt-10 text-center text-2xl'>
         <Title text1={'CONTACT '} text2={'US'} />
       </div>
-      <div className='my-10 flex flex-col justify-center md:flex-row gap-10 mb-28'>
-        <img className='w-full md:max-w-[480px]' src={assets.contact_img} alt="" />
-        <div className='flex flex-col justify-center items-start gap-6'>
-          <p className='font-semibold text-xl text-gray-600'>Our Store</p>
-          <p className='text-gray-500'>FC-80 Ruman Apartment <br /> Narayantala West, Baguiati, Kolkata-700059</p>
-          <p className='text-gray-500'>Tel: (+91) 123-4567 <br /> Email: admin@forever.com</p>
-          <p className='font-semibold text-xl text-gray-600'>Careers at Forever</p>
-          <p className='text-gray-500'>Learn more about our teams and job openings.</p>
-          <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500 cursor-pointer'>Explore Jobs</button>
+      <div className='my-10 mb-28 flex flex-col justify-center gap-10 md:flex-row'>
+        <img className='theme-image-frame w-full md:max-w-[480px]' src={assets.contact_img} alt="Contact Amazor" />
+        <div className='theme-card flex flex-col items-start justify-center gap-6 p-8'>
+          <p className='text-xl font-semibold text-slate-100'>Our Store</p>
+          <p className='theme-copy'>FC-80 Ruman Apartment <br /> Narayantala West, Baguiati, Kolkata-700059</p>
+          <p className='theme-copy'>Tel: (+91) 123-4567 <br /> Email: hello@amazor.com</p>
+          <p className='text-xl font-semibold text-slate-100'>Careers at Amazor</p>
+          <p className='theme-copy'>Learn more about our teams and job openings.</p>
+          <button className='theme-button-secondary cursor-pointer px-8 py-4 text-sm'>Explore Jobs</button>
         </div>
       </div>
       <NewsletterBox />

@@ -16,12 +16,12 @@ const Searchbar = () => {
     },[location])
 
   return showSearch && visible ? (
-    <div className='border-t border-b bg-gray-50 text-center'>
-      <div className='inline-flex items-center justify-center border border-gray-400 px-5 py-2 my-5 mx-3 rounded-full w-3/4 sm:w-1/2'>
-        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search' className='flex-1 outline-none bg-inherit text-sm' />
-        <img className='w-4' src={assets.search_icon} alt="" />
+    <div className='my-4 border-y border-slate-800/70 bg-slate-950/40 text-center backdrop-blur-md'>
+      <div className='theme-panel mx-3 my-5 inline-flex w-3/4 items-center justify-center gap-3 px-5 py-3 sm:w-1/2'>
+        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search' className='flex-1 bg-inherit text-sm outline-none' />
+        <img className='theme-icon w-4' src={assets.search_icon} alt="" />
       </div>
-      <img onClick={()=>setShowSearch(false)} className='inline w-3 cursor-pointer' src={assets.cross_icon} alt="" />
+      <img onClick={()=>setShowSearch(false)} className='theme-icon mb-5 inline w-3 cursor-pointer' src={assets.cross_icon} alt="" />
     </div>
   ):null
 }

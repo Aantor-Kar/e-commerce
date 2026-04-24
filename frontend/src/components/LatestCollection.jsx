@@ -13,10 +13,10 @@ const LatestCollection = () => {
     }, [products])
 
     return (
-        <div className='my-10'>
+        <div className='my-14'>
             <div className='text-center py-8 text-3xl'>
                 <Title text1={'LATEST '} text2={'COLLECTION'} />
-                <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
+                <p className='theme-copy m-auto w-3/4 text-xs sm:text-sm md:text-base'>
                     Discover our latest collection of products. Exclusive 1 of 1 products available at best prices.
                 </p>
             </div>

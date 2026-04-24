@@ -39,7 +39,7 @@ const Orders = ({token}) => {
   },[token])
   return (
     <div>
-      <h1 className="text-xl font-extrabold mb-10 text-gray-800">Order Page</h1>
+      <h1 className="text-xl font-extrabold mb-10 text-gray-800">Amazor Orders</h1>
       <div>
         {
           orders.map((order, index)=> (

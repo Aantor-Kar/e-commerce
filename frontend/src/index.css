@@ -1,24 +1,377 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@200..800&display=swap');
 @import "tailwindcss";
 
-a.active hr{
-    display: block;
+html {
+  background: #020617;
 }
-*{
-  font-family: 'Outfit';
+
+:root {
+  --bg: #020617;
+  --panel: rgba(9, 15, 28, 0.8);
+  --text: #e5eefc;
+  --muted: #91a4c3;
+  --muted-strong: #c9d7eb;
+  --border: rgba(148, 163, 184, 0.16);
+  --border-strong: rgba(103, 232, 249, 0.3);
+  --accent: #67e8f9;
+  --accent-strong: #38bdf8;
+  --accent-warm: #fbbf24;
+  --shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
 }
+
+a.active hr {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
 .prata-regular {
-  font-family: "Prata", serif;
-  font-weight: 400;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
   font-style: normal;
+  letter-spacing: 0.04em;
 }
-::-webkit-scrollbar{
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(251, 191, 36, 0.12), transparent 28%),
+    linear-gradient(180deg, #020617 0%, #08111f 40%, #020617 100%);
+  color: var(--text);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 92%);
+}
+
+a {
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+button,
+input,
+select,
+textarea {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+}
+
+input,
+select,
+textarea {
+  color: var(--text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+
+img {
+  user-select: none;
+}
+
+hr {
+  border-color: var(--border);
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.28);
+  color: #f8fafc;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.app-shell::after {
+  content: "";
+  position: fixed;
+  top: 5rem;
+  right: 7vw;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(103, 232, 249, 0.16), transparent 65%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.theme-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.theme-surface {
+  background: linear-gradient(180deg, rgba(11, 19, 34, 0.96), rgba(6, 12, 23, 0.96));
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  box-shadow: 0 18px 50px rgba(2, 6, 23, 0.26);
+}
+
+.theme-card {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(8, 15, 28, 0.92));
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(2, 6, 23, 0.22);
+}
+
+.theme-soft-card {
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.theme-image-frame {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(2, 6, 23, 0.88));
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.theme-input {
+  background: rgba(7, 13, 25, 0.82) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.theme-input:focus {
+  border-color: var(--accent-strong) !important;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.14);
+  outline: none;
+}
+
+.theme-select {
+  appearance: none;
+  background: rgba(7, 13, 25, 0.82);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 18px;
+}
+
+.theme-button {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-warm) 120%) !important;
+  border: 1px solid rgba(103, 232, 249, 0.24) !important;
+  border-radius: 9999px;
+  color: #04111f !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  box-shadow: 0 14px 34px rgba(56, 189, 248, 0.18);
+}
+
+.theme-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(56, 189, 248, 0.24);
+}
+
+.theme-button-secondary {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 9999px;
+  color: var(--text) !important;
+}
+
+.theme-button-secondary:hover {
+  border-color: var(--border-strong) !important;
+  background: rgba(30, 41, 59, 0.88) !important;
+}
+
+.theme-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(103, 232, 249, 0.16);
+  background: rgba(8, 15, 28, 0.7);
+  color: var(--muted-strong);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.theme-copy {
+  color: var(--muted) !important;
+}
+
+.theme-heading {
+  color: var(--text) !important;
+}
+
+.theme-highlight {
+  color: var(--accent) !important;
+}
+
+.theme-divider {
+  background: linear-gradient(90deg, rgba(103, 232, 249, 0), rgba(103, 232, 249, 0.85), rgba(251, 191, 36, 0));
+}
+
+.theme-ring {
+  border-color: var(--accent-strong) !important;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
+}
+
+.theme-icon {
+  filter: brightness(0) saturate(100%) invert(90%) sepia(12%) saturate(413%) hue-rotate(182deg) brightness(97%) contrast(91%);
+}
+
+.theme-icon-accent {
+  filter: brightness(0) saturate(100%) invert(85%) sepia(34%) saturate(630%) hue-rotate(154deg) brightness(105%) contrast(96%);
+}
+
+.glass-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-warm) 100%);
+  box-shadow: 0 0 16px rgba(103, 232, 249, 0.42);
+}
+
+.hero-glow {
+  position: relative;
+}
+
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  left: -8%;
+  top: -10%;
+  width: 19rem;
+  height: 19rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.24), transparent 65%);
+  filter: blur(44px);
+  pointer-events: none;
+}
+
+.nav-link {
+  color: #bdd0e6;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #f8fafc;
+}
+
+.nav-link hr {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-warm) 100%);
+}
+
+.mobile-drawer {
+  background: rgba(2, 6, 23, 0.98);
+  backdrop-filter: blur(22px);
+}
+
+.mobile-link {
+  border-color: rgba(148, 163, 184, 0.14);
+  color: #dbe6f5;
+}
+
+.mobile-link.active {
+  background: rgba(56, 189, 248, 0.12);
+  color: #f8fafc;
+}
+
+.product-card {
+  display: block;
+  overflow: hidden;
+  padding: 0.85rem;
+  color: var(--text);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-strong);
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.34);
+}
+
+.product-card img {
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.06);
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+}
+
+.brand-mark__glyph {
+  display: grid;
+  place-items: center;
+  width: 2.85rem;
+  height: 2.85rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-warm) 100%);
+  color: #020617;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2);
+}
+
+.brand-mark__name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.brand-mark__tag {
+  margin-top: 0.18rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.brand-mark--compact .brand-mark__glyph {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.brand-mark--compact .brand-mark__name {
+  font-size: 1.3rem;
+}
+
+::-webkit-scrollbar {
   display: none;
 }
 
 @media (max-width: 640px) {
-  a.active{
-    background-color: black;
-    color: white;
+  a.active {
+    background-color: rgba(56, 189, 248, 0.12);
+    color: #f8fafc;
+  }
+
+  .brand-mark__name {
+    font-size: 1.15rem;
+  }
+
+  .brand-mark__tag {
+    letter-spacing: 0.2em;
   }
 }

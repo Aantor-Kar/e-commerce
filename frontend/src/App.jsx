@@ -17,8 +17,15 @@ import Verify from './pages/Verify.jsx'
 
 const App = () => {
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
-      <ToastContainer />
+    <div className='app-shell px-4 pb-10 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+      <ToastContainer
+        theme='dark'
+        toastStyle={{
+          background: 'rgba(8, 15, 28, 0.96)',
+          color: '#e5eefc',
+          border: '1px solid rgba(148, 163, 184, 0.16)'
+        }}
+      />
       <Navbar />
       <SearchBar />
       <Routes>

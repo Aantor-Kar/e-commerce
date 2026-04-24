@@ -3,21 +3,27 @@ import { assets } from '../assets/assets'
 
 const OurPolicy = () => {
   return (
-    <div className='flex flex-col sm:flex-row justify-around gap-12 sm:gap-2 text-center py-20 text-xs sm:text-sm md:text-base text-gray-700'>
-      <div>
-        <img className='w-12 m-auto mb-5' src={assets.exchange_icon} alt="" />
-        <p className='font-semibold'>Easy Exchange Policy</p>
-        <p className='text-gray-400'>We offer a hassle-free exchange policy.</p>
+    <div className='grid gap-6 py-20 text-center text-xs sm:grid-cols-3 sm:text-sm md:text-base'>
+      <div className='theme-card px-6 py-8'>
+        <div className='mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-slate-900/80'>
+          <img className='theme-icon-accent w-8' src={assets.exchange_icon} alt="" />
+        </div>
+        <p className='font-semibold text-slate-100'>Easy Exchange Policy</p>
+        <p className='theme-copy mt-2'>We offer a hassle-free exchange policy.</p>
       </div>
-      <div>
-        <img className='w-12 m-auto mb-5' src={assets.quality_icon} alt="" />
-        <p className='font-semibold'>7 Days Return Policy</p>
-        <p className='text-gray-400'>We provide 7 days return policy.</p>
+      <div className='theme-card px-6 py-8'>
+        <div className='mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-slate-900/80'>
+          <img className='theme-icon-accent w-8' src={assets.quality_icon} alt="" />
+        </div>
+        <p className='font-semibold text-slate-100'>7 Days Return Policy</p>
+        <p className='theme-copy mt-2'>We provide 7 days return policy.</p>
       </div>
-      <div>
-        <img className='w-12 m-auto mb-5' src={assets.support_img} alt="" />
-        <p className='font-semibold'>Best Customer Support</p>
-        <p className='text-gray-400'>We provide 24/7 customer support.</p>
+      <div className='theme-card px-6 py-8'>
+        <div className='mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-slate-900/80'>
+          <img className='theme-icon-accent w-8' src={assets.support_img} alt="" />
+        </div>
+        <p className='font-semibold text-slate-100'>Best Customer Support</p>
+        <p className='theme-copy mt-2'>We provide 24/7 customer support.</p>
       </div>
     </div>
   )

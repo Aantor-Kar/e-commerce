@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { backendUrl } from '../App';
 import { toast } from 'react-toastify';
+import AdminBrand from './AdminBrand';
 
 const Login = ({setToken}) => {
     const [email, setEmail] = useState('');
@@ -23,7 +24,11 @@ const Login = ({setToken}) => {
     return (
         <div className="min-h-screen flex items-center justify-center w-full">
             <div className="bg-white shadow-md rounded-lg px-8 py-6 max-w-md">
-                <h1 className="text-2xl font-extrabold mb-4">Admin Panel</h1>
+                <div className="mb-5">
+                    <AdminBrand />
+                </div>
+                <h1 className="text-2xl font-extrabold mb-1 text-slate-900">Amazor Admin Panel</h1>
+                <p className="mb-4 text-sm text-slate-500">Manage products, orders, and inventory from one place.</p>
                 <form onSubmit={onSubmitHandler}>
                     <div className="mb-3 min-w-72">
                         <p className="text-sm text-gray-700 mb-2">Email Address</p>
@@ -33,7 +38,7 @@ const Login = ({setToken}) => {
                         <p className="text-sm text-gray-700 mb-2">Password</p>
                         <input onChange={(e) => setPassword(e.target.value)} value={password} className="rounded-md w-full px-3 py-2 border border-gray-300 outline-none" type="password" placeholder="Enter your password" required />
                     </div>
-                    <button className="mt-2 w-full py-2 px-4 rounded-md text-white bg-black cursor-pointer" type="submit">Login</button>
+                    <button className="mt-2 w-full py-2 px-4 rounded-md text-white bg-black cursor-pointer" type="submit">Login to Amazor</button>
                 </form>
             </div>
         </div>

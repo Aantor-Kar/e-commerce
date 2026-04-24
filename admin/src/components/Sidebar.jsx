@@ -8,11 +8,11 @@ const Sidebar = () => {
       <div className="flex flex-col gap-4 pt-6 pl-[20%] text-[15px]">
         <NavLink className="flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l" to="/add">
             <img src={assets.add_icon} alt="" />
-            <p className="hidden md:block">Add Items</p>
+            <p className="hidden md:block">Add Products</p>
         </NavLink>
         <NavLink className="flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l" to="/list">
             <img src={assets.order_icon} alt="" />
-            <p className="hidden md:block">List Items</p>
+            <p className="hidden md:block">Catalog</p>
         </NavLink>
         <NavLink className="flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l" to="/orders">
             <img src={assets.order_icon} alt="" />
